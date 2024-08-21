@@ -1,0 +1,7 @@
+path: ../Datasets/qanats_256_synt_G1_AFG1_pairs_single_2/
+train: ../images/train
+test: ../images/test
+val: ../images/val
+# Classes
+nc: 2
+names: ['qanat', 'qanat_pair']
