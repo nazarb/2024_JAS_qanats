@@ -1,4 +1,28 @@
-# YOLOv9
+# YOLOv9 qanat Object Detection model 
+
+Buławka, Nazarij, Hector A. Orengo, and Iban Berganzo-Besga. 2024. ‘Deep Learning-Based Detection of Qanat Underground Water Distribution Systems Using HEXAGON Spy Satellite Imagery’. Journal of Archaeological Science JASC24-174.
+
+
+
+## Citation
+
+```
+
+@article{bulawkaDeepLearningbasedDetection2024,
+	title = {Deep {Learning}-based detection of {Qanat} underground water distribution systems using {HEXAGON} spy satellite imagery},
+	volume = {JASC24-174},
+	journal = {Journal of Archaeological Science},
+	author = {Buławka, Nazarij and Orengo, Hector A. and Berganzo-Besga, Iban},
+	year = {2024},
+	note = {paper international sent to publication},
+}
+
+```
+
+
+
+
+# YOLOv9 - official repo
 
 Implementation of paper - [YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information](https://arxiv.org/abs/2402.13616)
 
