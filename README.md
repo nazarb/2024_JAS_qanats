@@ -1,6 +1,17 @@
 # YOLOv9 qanat Object Detection model 
 
-Buławka, Nazarij, Hector A. Orengo, and Iban Berganzo-Besga. 2024. ‘Deep Learning-Based Detection of Qanat Underground Water Distribution Systems Using HEXAGON Spy Satellite Imagery’. Journal of Archaeological Science JASC24-174.
+Buławka, Nazarij, Hector A. Orengo, and Iban Berganzo-Besga. 2024. ‘Deep Learning-Based Detection of Qanat Underground Water Distribution Systems Using HEXAGON Spy Satellite Imagery’. Journal of Archaeological Science 171:106053. https://doi.org/10.1016/j.jas.2024.106053.
+
+## Abstract
+
+Qanats are a remarkable type of ancient hydraulic structure for sustainable water distribution in arid environments that use subterranean channels to transport water from highland or mountainous areas. The presence of the qanat system is marked by a line of regularly spaced shafts visible from the surface, which can be used to detect qanats using satellite imagery. Typically, qanats have been documented by field mapping or manual digitisation within a Geographic Information System (GIS) environment. This process is time-consuming due to the numerous shafts within each qanat line. However, several automated methods for detecting qanat structures have been explored, using techniques such as morphological filters, custom convolutional neural networks (CNN) and, more recently, YOLOv5 and Mask R-CNN. These approaches used high-resolution RGB images and CORONA images. However, the use of black and white CORONA in CNNs has been limited in its applicability due to a high rate of false positives.
+
+This paper explores the potential of YOLOv9 in processing the black and white HEXAGON (KH-9) high-resolution spy satellite system launched in 1971. Two areas in Afghanistan (Maiwand) and Iran (Gorgan Plain) were selected to train the system images extracted from HEXAGON imagery and artificial synthetic data. The training dataset was augmented using the Albumentation library, which increased the number of tiles used. The model was tested using two types of HEXAGON imagery for selected areas in Afghanistan (Maiwand), Iran (Gorgan Plain) and Morocco (Rissani), and CORONA imagery in Iran (Gorgan Plain).
+
+Our study provided a model capable of predicting the location of qanat shafts with a precision of over 0.881 and a recall of 0.627 for most of the case studies tested. This is the first case study aimed at detecting qanats in different landscapes using different types of satellite imagery. Using real, augmented, and artificial data allowed us to generalise the representation of qanats into lineal groups of circular features. Thanks to applying labelling for individual qanats and their pairs as separate classes, our approach eliminated most of the isolated and clustered false positives.
+
+# Workflow
+
 
 ## Training
 
@@ -72,18 +83,26 @@ AOI: clipped to MR2
 ```
 !python detect_dual.py --weights C:/ML/yolov9/runs/train/exp/weights/best.pt --conf 0.1 --source D:/UnderTheSands/Rasters/ML/MR2b/D3C1218-401390F004_bc_8_SPLIT/ --img 256 --save-txt --save-conf --max-det 9999999999 --device 0
 ```
-## Citation
+
+## Post-processing
+* Convert YOLO labels to SHP (developed by [Iban Berganzo-Besga](https://github.com/iberganzo), and adjusted by [Nazarij Buławka](https://github.com/nazarb)
+* Convert the results to the same coordinate system (EPSG: 4326)
+* Remove duplicates
+* Perform spatial join of class 0 and 1
+* Perform DBSCAN
+* Filter data
+* Compare detected features and reference data
+* Calculate precision, recall and F1-score
+* Export results
+
+
+
+# Citation
 
 ```
 
-@article{bulawkaDeepLearningbasedDetection2024,
-	title = {Deep {Learning}-based detection of {Qanat} underground water distribution systems using {HEXAGON} spy satellite imagery},
-	volume = {JASC24-174},
-	journal = {Journal of Archaeological Science},
-	author = {Buławka, Nazarij and Orengo, Hector A. and Berganzo-Besga, Iban},
-	year = {2024},
-	note = {paper international sent to publication},
-}
+ @article{Buławka_Orengo_Berganzo-Besga_2024, title={Deep learning-based detection of qanat underground water distribution systems using HEXAGON spy satellite imagery}, volume={171}, rights={All rights reserved}, DOI={10.1016/j.jas.2024.106053}, abstractNote={Qanats are a remarkable type of ancient hydraulic structure for sustainable water distribution in arid environ­ ments that use subterranean channels to transport water from highland or mountainous areas. The presence of the qanat system is marked by a line of regularly spaced shafts visible from the surface, which can be used to detect qanats using satellite imagery. Typically, qanats have been documented by field mapping or manual digitisation within a Geographic Information System (GIS) environment. This process is time-consuming due to the numerous shafts within each qanat line. However, several automated methods for detecting qanat structures have been explored, using techniques such as morphological filters, custom convolutional neural networks (CNN) and, more recently, YOLOv5 and Mask R-CNN. These approaches used high-resolution RGB images and CORONA images. However, the use of black and white CORONA in CNNs has been limited in its applicability due to a high rate of false positives.}, journal={Journal of Archaeological Science}, author={Buławka, Nazarij and Orengo, Hector A. and Berganzo-Besga, Iban}, year={2024}, pages={106053}, language={en} }
+
 
 
 
