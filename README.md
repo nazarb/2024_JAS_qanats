@@ -99,10 +99,22 @@ AOI: clipped to MR2
 
 # Citation
 
-```
+```bash
 
- @article{Buławka_Orengo_Berganzo-Besga_2024, title={Deep learning-based detection of qanat underground water distribution systems using HEXAGON spy satellite imagery}, volume={171}, rights={All rights reserved}, DOI={10.1016/j.jas.2024.106053}, abstractNote={Qanats are a remarkable type of ancient hydraulic structure for sustainable water distribution in arid environ­ ments that use subterranean channels to transport water from highland or mountainous areas. The presence of the qanat system is marked by a line of regularly spaced shafts visible from the surface, which can be used to detect qanats using satellite imagery. Typically, qanats have been documented by field mapping or manual digitisation within a Geographic Information System (GIS) environment. This process is time-consuming due to the numerous shafts within each qanat line. However, several automated methods for detecting qanat structures have been explored, using techniques such as morphological filters, custom convolutional neural networks (CNN) and, more recently, YOLOv5 and Mask R-CNN. These approaches used high-resolution RGB images and CORONA images. However, the use of black and white CORONA in CNNs has been limited in its applicability due to a high rate of false positives.}, journal={Journal of Archaeological Science}, author={Buławka, Nazarij and Orengo, Hector A. and Berganzo-Besga, Iban}, year={2024}, pages={106053}, language={en} }
 
+@article{bulawkaDeepLearningbasedDetection2024,
+	title = {Deep learning-based detection of qanat underground water distribution systems using {HEXAGON} spy satellite imagery},
+	volume = {171},
+	copyright = {All rights reserved},
+	doi = {10.1016/j.jas.2024.106053},
+	abstract = {Qanats are a remarkable type of ancient hydraulic structure for sustainable water distribution in arid environ­ ments that use subterranean channels to transport water from highland or mountainous areas. The presence of the qanat system is marked by a line of regularly spaced shafts visible from the surface, which can be used to detect qanats using satellite imagery. Typically, qanats have been documented by field mapping or manual digitisation within a Geographic Information System (GIS) environment. This process is time-consuming due to the numerous shafts within each qanat line. However, several automated methods for detecting qanat structures have been explored, using techniques such as morphological filters, custom convolutional neural networks (CNN) and, more recently, YOLOv5 and Mask R-CNN. These approaches used high-resolution RGB images and CORONA images. However, the use of black and white CORONA in CNNs has been limited in its applicability due to a high rate of false positives.},
+	language = {en},
+	journal = {Journal of Archaeological Science},
+	author = {Buławka, Nazarij and Orengo, Hector A. and Berganzo-Besga, Iban},
+	year = {2024},
+	keywords = {https://www.altmetric.com/details/167129474},
+	pages = {106053},
+}
 
 
 
